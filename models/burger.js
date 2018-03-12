@@ -3,13 +3,18 @@ var orm = require("../config/orm.js");
 
 var burger = {
     all: function (callback) {
-        orm.all("burgers", function (res) {
-            callback(res);
+        orm.all("burgers", function (result) {
+            callback(result);
         });
     },
     create: function (columns, values, callback) {
-        orm.create("burgers", columns, values, function (res) {
-            callback(res);
+        orm.create("burgers", columns, values, function (result) {
+            callback(result);
+        });
+    },
+    update: function(objColVals, condition, callback) {
+        orm.update("burgers", objColVals, condition, function(result) {
+            callback(result);
         });
     }
 };

@@ -53,12 +53,26 @@ var orm = {
 
         console.log(queryString);
 
-        connection.query(queryString, vals, function (err, result) {
+        connection.query(queryString, values, function (err, result) {
             if (err) {
                 throw err;
             }
             callback(result);
         })
+    },
+    update: function(table, objColVals, condition, callback) {
+        var queryString = "UPDATE " + table;
+        queryString += " SET ";
+        queryString += objToSql(objColVals);
+        queryString += " WHERE ";
+        queryString += condition;
+
+        connection.query(queryString, function (error, result) {
+            if (error) {
+                throw error;
+            }
+            callback(result);
+        });
     }
 };
 
