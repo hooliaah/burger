@@ -59,22 +59,6 @@ var orm = {
             }
             callback(result);
         })
-    },
-    update: function (table, objColVals, condition, callback) {
-        var queryString = "UPDATE " + table;
-
-        queryString += " SET";
-        queryString += objToSql(objColVals);
-        queryString += " WHERE";
-        queryString += condition;
-
-        console.log(queryString);
-        connection.query(queryString, function (err, result) {
-            if (err) {
-                throw err;
-            }
-            callback(result);
-        })
     }
 };
 

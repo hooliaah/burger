@@ -10,16 +10,19 @@ router.get("/", function(req, res) {
         var hbsObject = {
             burger: data
         };
-        console.log(hbsObject);
-        res.render("index", hbsObject);
+         res.render("index", hbsObject);
     });
 });
 
-// router.post("/", function(req, res) {
-//     burger.create([
-//         ""
-//     ])
-// })
+router.post("/api/burger", function(req,res){
+    burger.create([
+      "burger_name"
+    ],[
+      req.body.burger_name
+    ], function(res){
+      res.json({ id: result.insertID });
+    });
+  });
 
 // export routes for server.js to use
 module.exports = router;

@@ -11,11 +11,6 @@ var burger = {
         orm.create("burgers", columns, values, function (res) {
             callback(res);
         });
-    },
-    update: function (objColVals, condition, cb) {
-        orm.update("burgers", objColVals, condition, function (res) {
-            callback(res);
-        });
     }
 };
 
