@@ -1,35 +1,43 @@
 {{!-- page title --}}
-<h1>Eat the Burgers!</h1>
+<h1 class="header">Eat the Burgers!</h1>
 
 {{!-- list of burders available for devouring --}}
-<h2>Burgers Available for Devouring</h2>
+<main class="flex-center">
+<div class="burger-list ">
+<h2 class="header">Burgers Available for Devouring</h2>
 {{!-- loop through each item in the burger list --}}
 {{#each burger}}
 {{!-- only include burgers that are not already devoured --}}
     {{#unless devoured}}
-        <p>{{id}} {{burger_name}} 
+        <p>{{id}}. {{burger_name}} 
             <button class="devour-button" data-id="{{this.id}}" data-devour="true">Eat this burger!</button>
         </p>
         
     {{/unless}}
 {{/each}}
+</div>
 
 {{!-- list of burgers that have been devoured --}}
-<h2>Devoured Burgers</h2>
+<div class="burger-list">
+<h2 class="header">Devoured Burgers</h2>
 {{#each burger}}
     {{#if devoured}}
-        <p>{{id}} {{burger_name}}</p>
+        <p>{{id}}. {{burger_name}}</p>
     {{/if}}
 {{/each}}
+</div>
+</main>
 
 {{!-- user input form to add a new burger to the list --}}
-<h2>Add a Burger!</h2>
+<div id="burger-form">
+<h2 class="header">Add a Burger!</h2>
 <form class="create-form">
 
     <div class="form-group">
-        <label for="burg">What kind of burger would you like to eat?:</label>
+        <label for="burg">Don't see something you like? Add something new!</label>
         <input type="text" id="burg" name="burger_name">
     </div>
 
-    <button type="submit">Add Burger</button>
+    <button type="submit" id="submit-button">Add Burger</button>
 </form>
+</div>

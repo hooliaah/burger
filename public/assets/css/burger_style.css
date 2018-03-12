@@ -1,3 +1,47 @@
 body {
     background-color: lightblue;
+    color: navy;
+    font-family: sans-serif;
+}
+
+#burger-photo {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.burger-list {
+    max-width: 375px;
+    margin: 15px;
+    padding: 15px;
+    background-color: indianred;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+}
+
+#burger-form {
+    clear: both;
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.devour-button {
+    background-color: rgb(245, 194, 65);
+}
+
+#submit-button {
+    background-color: rgb(203, 128, 222);
 }
